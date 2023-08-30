@@ -4,5 +4,5 @@
 
 - 🌱 I’m currently learning **Embedded Systems Course**
 
-- Contents
+-- Contents
 <h4 align="left">C_Programming -- In Progress</h4>
