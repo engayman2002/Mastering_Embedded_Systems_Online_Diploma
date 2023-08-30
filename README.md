@@ -5,4 +5,4 @@
 - 🌱 I’m currently learning **Embedded Systems Course**
 
 ## Contents
-<h4 align="left">Unit 2 --> <b>C_Programming</b> --> In Progress</h4>
+<h4 align="left">Unit 2 --> <h3>C_Programming</h3> --> In Progress</h4>
