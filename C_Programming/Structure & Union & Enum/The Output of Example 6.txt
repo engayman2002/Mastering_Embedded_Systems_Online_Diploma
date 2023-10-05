@@ -1,0 +1,9 @@
+The Output of Example 6
+
+size of union = 32
+size of structure =  40 (packing)
+
+Note:
+size of structure (padding) = 40
+padding and packing are the same if the word is = 4 Bytes
+Because it's depend on Architecture and Compiler.
