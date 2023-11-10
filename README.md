@@ -6,5 +6,5 @@
 
 ## Contents
 <h4 align="left">Unit 2 --> <b>C_Programming</b> --> Done</h4>
-<h4 align="left">Unit 2 --> <b>Embedded_C</b> --> Soon </h4>
+<h4 align="left">Unit 3 --> <b>Embedded_C</b> --> Soon </h4>
 
