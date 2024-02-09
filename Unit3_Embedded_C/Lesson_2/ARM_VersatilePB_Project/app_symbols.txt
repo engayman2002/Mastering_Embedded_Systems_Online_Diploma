@@ -1,0 +1,4 @@
+00000000 D aymanword
+00000000 T main
+         U Send_String_to_UART0DR
+00000000 R Thanks
