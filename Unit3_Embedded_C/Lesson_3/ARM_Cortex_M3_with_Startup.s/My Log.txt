@@ -1,0 +1,24 @@
+
+engay@Ayman MINGW64 /d/M My Working Dir/Mastering_Embedded_Systems_Online_Diploma/Unit3_Embedded_C/Lesson_3/ARM_Cortex_M3_with_Startup.s (main)
+$ make clean
+rm *.o *.elf *.txt *.map *.bin
+All .o & .elf was deleted successfully
+
+engay@Ayman MINGW64 /d/M My Working Dir/Mastering_Embedded_Systems_Online_Diploma/Unit3_Embedded_C/Lesson_3/ARM_Cortex_M3_with_Startup.s (main)
+$ make
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . main.c -o main.o
+main.c:38:27: warning: initialization from incompatible pointer type [enabled by default]
+arm-none-eabi-nm.exe main.o >> main.o-Symbols.txt
+arm-none-eabi-objdump.exe -h main.o >> main.o-Header.txt
+arm-none-eabi-objdump.exe -d main.o >> main.o-Disassemble.txt
+arm-none-eabi-as.exe -mcpu=cortex-m3 -gdwarf-2 -mthumb startup.s -o startup.o
+arm-none-eabi-nm.exe startup.o >> startup.o-Symbols.txt
+arm-none-eabi-objdump.exe -h startup.o >> startup.o-Header.txt
+arm-none-eabi-objdump.exe -d startup.o >> startup.o-Disassemble.txt
+arm-none-eabi-ld.exe -T linker_script.ld main.o startup.o  -o learn-in-depth-Ayman.elf -Map=Map_file.map
+arm-none-eabi-objdump.exe -h learn-in-depth-Ayman.elf >> Header_info_ELF_learn-in-depth-Ayman.txt
+arm-none-eabi-objdump.exe -d learn-in-depth-Ayman.elf >> Disassemble_info_ELF_learn-in-depth-Ayman.txt
+arm-none-eabi-objcopy.exe -O binary learn-in-depth-Ayman.elf learn-in-depth-Ayman.bin
+
+engay@Ayman MINGW64 /d/M My Working Dir/Mastering_Embedded_Systems_Online_Diploma/Unit3_Embedded_C/Lesson_3/ARM_Cortex_M3_with_Startup.s (main)
+$

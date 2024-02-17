@@ -1,0 +1,12 @@
+
+startup.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <_reset>:
+   0:	f7ff fffe 	bl	0 <main>
+   4:	e7fe      	b.n	4 <_reset+0x4>
+
+00000006 <Vector_Handler>:
+   6:	e7fb      	b.n	0 <_reset>
