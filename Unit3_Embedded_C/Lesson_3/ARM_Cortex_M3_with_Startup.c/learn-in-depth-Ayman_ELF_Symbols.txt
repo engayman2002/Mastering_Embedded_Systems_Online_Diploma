@@ -1,0 +1,16 @@
+0800017c W Bus_Fault
+0800017c T Default_Handler
+20000004 B End_bss
+20000004 D End_data
+08000188 T End_text
+0800017c W H_Fault_Handler
+08000018 T main
+0800017c W MM_Fault_Handler
+080000c0 T NMI_Handler
+20000000 D P_ODR
+080000cc T Reset_Handler
+20001004 B stack_top
+20000004 B Start_bss
+20000000 D Start_data
+0800017c W Usage_Fault_Handler
+08000000 T vectors
