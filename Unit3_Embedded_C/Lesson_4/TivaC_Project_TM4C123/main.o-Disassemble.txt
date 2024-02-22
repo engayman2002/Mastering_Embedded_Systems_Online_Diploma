@@ -1,0 +1,72 @@
+
+main.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	b480      	push	{r7}
+   2:	b083      	sub	sp, #12
+   4:	af00      	add	r7, sp, #0
+   6:	f24e 1308 	movw	r3, #57608	; 0xe108
+   a:	f2c4 030f 	movt	r3, #16399	; 0x400f
+   e:	f04f 0220 	mov.w	r2, #32
+  12:	601a      	str	r2, [r3, #0]
+  14:	f04f 0300 	mov.w	r3, #0
+  18:	607b      	str	r3, [r7, #4]
+  1a:	e003      	b.n	24 <main+0x24>
+  1c:	687b      	ldr	r3, [r7, #4]
+  1e:	f103 0301 	add.w	r3, r3, #1
+  22:	607b      	str	r3, [r7, #4]
+  24:	687b      	ldr	r3, [r7, #4]
+  26:	2bc7      	cmp	r3, #199	; 0xc7
+  28:	ddf8      	ble.n	1c <main+0x1c>
+  2a:	f44f 43a8 	mov.w	r3, #21504	; 0x5400
+  2e:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  32:	f44f 42a8 	mov.w	r2, #21504	; 0x5400
+  36:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  3a:	6812      	ldr	r2, [r2, #0]
+  3c:	f042 0208 	orr.w	r2, r2, #8
+  40:	601a      	str	r2, [r3, #0]
+  42:	f245 531c 	movw	r3, #21788	; 0x551c
+  46:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  4a:	f245 521c 	movw	r2, #21788	; 0x551c
+  4e:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  52:	6812      	ldr	r2, [r2, #0]
+  54:	f042 0208 	orr.w	r2, r2, #8
+  58:	601a      	str	r2, [r3, #0]
+  5a:	f245 33fc 	movw	r3, #21500	; 0x53fc
+  5e:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  62:	f245 32fc 	movw	r2, #21500	; 0x53fc
+  66:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  6a:	6812      	ldr	r2, [r2, #0]
+  6c:	f042 0208 	orr.w	r2, r2, #8
+  70:	601a      	str	r2, [r3, #0]
+  72:	f04f 0300 	mov.w	r3, #0
+  76:	607b      	str	r3, [r7, #4]
+  78:	e003      	b.n	82 <main+0x82>
+  7a:	687b      	ldr	r3, [r7, #4]
+  7c:	f103 0301 	add.w	r3, r3, #1
+  80:	607b      	str	r3, [r7, #4]
+  82:	687a      	ldr	r2, [r7, #4]
+  84:	f644 631f 	movw	r3, #19999	; 0x4e1f
+  88:	429a      	cmp	r2, r3
+  8a:	ddf6      	ble.n	7a <main+0x7a>
+  8c:	f245 33fc 	movw	r3, #21500	; 0x53fc
+  90:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  94:	f245 32fc 	movw	r2, #21500	; 0x53fc
+  98:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  9c:	6812      	ldr	r2, [r2, #0]
+  9e:	f022 0208 	bic.w	r2, r2, #8
+  a2:	601a      	str	r2, [r3, #0]
+  a4:	f04f 0300 	mov.w	r3, #0
+  a8:	607b      	str	r3, [r7, #4]
+  aa:	e003      	b.n	b4 <main+0xb4>
+  ac:	687b      	ldr	r3, [r7, #4]
+  ae:	f103 0301 	add.w	r3, r3, #1
+  b2:	607b      	str	r3, [r7, #4]
+  b4:	687a      	ldr	r2, [r7, #4]
+  b6:	f644 631f 	movw	r3, #19999	; 0x4e1f
+  ba:	429a      	cmp	r2, r3
+  bc:	ddf6      	ble.n	ac <main+0xac>
+  be:	e7cc      	b.n	5a <main+0x5a>

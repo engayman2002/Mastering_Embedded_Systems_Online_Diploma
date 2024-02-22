@@ -1,0 +1,149 @@
+
+TivaC_TM4C123_Project_Ayman.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <vectors>:
+   0:	00 04 00 20 d9 00 00 00 89 01 00 00 89 01 00 00     ... ............
+  10:	89 01 00 00 89 01 00 00                             ........
+
+00000018 <main>:
+  18:	b480      	push	{r7}
+  1a:	b083      	sub	sp, #12
+  1c:	af00      	add	r7, sp, #0
+  1e:	f24e 1308 	movw	r3, #57608	; 0xe108
+  22:	f2c4 030f 	movt	r3, #16399	; 0x400f
+  26:	f04f 0220 	mov.w	r2, #32
+  2a:	601a      	str	r2, [r3, #0]
+  2c:	f04f 0300 	mov.w	r3, #0
+  30:	607b      	str	r3, [r7, #4]
+  32:	e003      	b.n	3c <main+0x24>
+  34:	687b      	ldr	r3, [r7, #4]
+  36:	f103 0301 	add.w	r3, r3, #1
+  3a:	607b      	str	r3, [r7, #4]
+  3c:	687b      	ldr	r3, [r7, #4]
+  3e:	2bc7      	cmp	r3, #199	; 0xc7
+  40:	ddf8      	ble.n	34 <main+0x1c>
+  42:	f44f 43a8 	mov.w	r3, #21504	; 0x5400
+  46:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  4a:	f44f 42a8 	mov.w	r2, #21504	; 0x5400
+  4e:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  52:	6812      	ldr	r2, [r2, #0]
+  54:	f042 0208 	orr.w	r2, r2, #8
+  58:	601a      	str	r2, [r3, #0]
+  5a:	f245 531c 	movw	r3, #21788	; 0x551c
+  5e:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  62:	f245 521c 	movw	r2, #21788	; 0x551c
+  66:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  6a:	6812      	ldr	r2, [r2, #0]
+  6c:	f042 0208 	orr.w	r2, r2, #8
+  70:	601a      	str	r2, [r3, #0]
+  72:	f245 33fc 	movw	r3, #21500	; 0x53fc
+  76:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  7a:	f245 32fc 	movw	r2, #21500	; 0x53fc
+  7e:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  82:	6812      	ldr	r2, [r2, #0]
+  84:	f042 0208 	orr.w	r2, r2, #8
+  88:	601a      	str	r2, [r3, #0]
+  8a:	f04f 0300 	mov.w	r3, #0
+  8e:	607b      	str	r3, [r7, #4]
+  90:	e003      	b.n	9a <main+0x82>
+  92:	687b      	ldr	r3, [r7, #4]
+  94:	f103 0301 	add.w	r3, r3, #1
+  98:	607b      	str	r3, [r7, #4]
+  9a:	687a      	ldr	r2, [r7, #4]
+  9c:	f644 631f 	movw	r3, #19999	; 0x4e1f
+  a0:	429a      	cmp	r2, r3
+  a2:	ddf6      	ble.n	92 <main+0x7a>
+  a4:	f245 33fc 	movw	r3, #21500	; 0x53fc
+  a8:	f2c4 0302 	movt	r3, #16386	; 0x4002
+  ac:	f245 32fc 	movw	r2, #21500	; 0x53fc
+  b0:	f2c4 0202 	movt	r2, #16386	; 0x4002
+  b4:	6812      	ldr	r2, [r2, #0]
+  b6:	f022 0208 	bic.w	r2, r2, #8
+  ba:	601a      	str	r2, [r3, #0]
+  bc:	f04f 0300 	mov.w	r3, #0
+  c0:	607b      	str	r3, [r7, #4]
+  c2:	e003      	b.n	cc <main+0xb4>
+  c4:	687b      	ldr	r3, [r7, #4]
+  c6:	f103 0301 	add.w	r3, r3, #1
+  ca:	607b      	str	r3, [r7, #4]
+  cc:	687a      	ldr	r2, [r7, #4]
+  ce:	f644 631f 	movw	r3, #19999	; 0x4e1f
+  d2:	429a      	cmp	r2, r3
+  d4:	ddf6      	ble.n	c4 <main+0xac>
+  d6:	e7cc      	b.n	72 <main+0x5a>
+
+000000d8 <Reset_Handler>:
+  d8:	b580      	push	{r7, lr}
+  da:	b086      	sub	sp, #24
+  dc:	af00      	add	r7, sp, #0
+  de:	f240 0200 	movw	r2, #0
+  e2:	f2c2 0200 	movt	r2, #8192	; 0x2000
+  e6:	f240 0300 	movw	r3, #0
+  ea:	f2c2 0300 	movt	r3, #8192	; 0x2000
+  ee:	1ad3      	subs	r3, r2, r3
+  f0:	60bb      	str	r3, [r7, #8]
+  f2:	f240 1394 	movw	r3, #404	; 0x194
+  f6:	f2c0 0300 	movt	r3, #0
+  fa:	617b      	str	r3, [r7, #20]
+  fc:	f240 0300 	movw	r3, #0
+ 100:	f2c2 0300 	movt	r3, #8192	; 0x2000
+ 104:	613b      	str	r3, [r7, #16]
+ 106:	f04f 0300 	mov.w	r3, #0
+ 10a:	60fb      	str	r3, [r7, #12]
+ 10c:	e00f      	b.n	12e <Reset_Handler+0x56>
+ 10e:	697b      	ldr	r3, [r7, #20]
+ 110:	781a      	ldrb	r2, [r3, #0]
+ 112:	693b      	ldr	r3, [r7, #16]
+ 114:	701a      	strb	r2, [r3, #0]
+ 116:	693b      	ldr	r3, [r7, #16]
+ 118:	f103 0301 	add.w	r3, r3, #1
+ 11c:	613b      	str	r3, [r7, #16]
+ 11e:	697b      	ldr	r3, [r7, #20]
+ 120:	f103 0301 	add.w	r3, r3, #1
+ 124:	617b      	str	r3, [r7, #20]
+ 126:	68fb      	ldr	r3, [r7, #12]
+ 128:	f103 0301 	add.w	r3, r3, #1
+ 12c:	60fb      	str	r3, [r7, #12]
+ 12e:	68fa      	ldr	r2, [r7, #12]
+ 130:	68bb      	ldr	r3, [r7, #8]
+ 132:	429a      	cmp	r2, r3
+ 134:	d3eb      	bcc.n	10e <Reset_Handler+0x36>
+ 136:	f240 4200 	movw	r2, #1024	; 0x400
+ 13a:	f2c2 0200 	movt	r2, #8192	; 0x2000
+ 13e:	f240 0300 	movw	r3, #0
+ 142:	f2c2 0300 	movt	r3, #8192	; 0x2000
+ 146:	1ad3      	subs	r3, r2, r3
+ 148:	607b      	str	r3, [r7, #4]
+ 14a:	f240 0300 	movw	r3, #0
+ 14e:	f2c2 0300 	movt	r3, #8192	; 0x2000
+ 152:	613b      	str	r3, [r7, #16]
+ 154:	f04f 0300 	mov.w	r3, #0
+ 158:	60fb      	str	r3, [r7, #12]
+ 15a:	e00b      	b.n	174 <Reset_Handler+0x9c>
+ 15c:	693b      	ldr	r3, [r7, #16]
+ 15e:	f04f 0200 	mov.w	r2, #0
+ 162:	701a      	strb	r2, [r3, #0]
+ 164:	693b      	ldr	r3, [r7, #16]
+ 166:	f103 0301 	add.w	r3, r3, #1
+ 16a:	613b      	str	r3, [r7, #16]
+ 16c:	68fb      	ldr	r3, [r7, #12]
+ 16e:	f103 0301 	add.w	r3, r3, #1
+ 172:	60fb      	str	r3, [r7, #12]
+ 174:	68fa      	ldr	r2, [r7, #12]
+ 176:	687b      	ldr	r3, [r7, #4]
+ 178:	429a      	cmp	r2, r3
+ 17a:	d3ef      	bcc.n	15c <Reset_Handler+0x84>
+ 17c:	f7ff ff4c 	bl	18 <main>
+ 180:	f107 0718 	add.w	r7, r7, #24
+ 184:	46bd      	mov	sp, r7
+ 186:	bd80      	pop	{r7, pc}
+
+00000188 <Default_Handler>:
+ 188:	b580      	push	{r7, lr}
+ 18a:	af00      	add	r7, sp, #0
+ 18c:	f7ff ffa4 	bl	d8 <Reset_Handler>
+ 190:	bd80      	pop	{r7, pc}
+ 192:	bf00      	nop
