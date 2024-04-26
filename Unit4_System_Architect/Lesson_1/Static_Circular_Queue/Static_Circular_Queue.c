@@ -27,7 +27,7 @@ Queue_Status Queue_Init      (Queue_Buf_t* My_Queue, element_type* My_Storage, u
 
     My_Queue->count=0;
     My_Queue->length=length;
-    
+
     return QUEUE_OK;
 }
 
@@ -45,7 +45,7 @@ Queue_Status Queue_Enqueue   (Queue_Buf_t* My_Queue,element_type item)
     }
 
     *(My_Queue->rear) = item;
-    
+
     if( (My_Queue->base+My_Queue->length-1) == My_Queue->rear )
     {
         My_Queue->rear = My_Queue->base;
@@ -146,11 +146,11 @@ Queue_Status Queue_Size      (Queue_Buf_t* My_Queue,uint32_t* size)
 }
 Queue_Status Queue_IS_FULL   (Queue_Buf_t* My_Queue)
 {
-    if(My_Queue->count+1==My_Queue->length)
+    if(My_Queue->count==My_Queue->length)
     {
         return QUEUE_FULL;
     }
-    
+
     return QUEUE_NOT_FULL;
 }
 Queue_Status Queue_IS_EMPTY  (Queue_Buf_t* My_Queue)
