@@ -17,6 +17,7 @@ typedef struct
 
 }Queue_Buf_t;
 
+
 // You must declare your static array because it's the storage of your Queue.
 /* Example:
 	element_type My_Queue[100];
