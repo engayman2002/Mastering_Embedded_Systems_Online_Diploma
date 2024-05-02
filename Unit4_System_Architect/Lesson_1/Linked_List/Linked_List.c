@@ -1,42 +1,50 @@
 #include "Linked_List.h"
 #include <stdlib.h>
 
-Linked_List_Status Linked_List_Init(Linked_List_Node My_Head)
+Linked_List_Status Linked_List_Init(Linked_List_Node** My_Head)
 {
-    My_Head->PNextLinkedList=NULL;
+    (*(My_Head))=NULL;
     return Linked_OK;
 }
 
-Linked_List_Status Linked_List_AddNode(Linked_List_Node My_Head,element_type data)
+Linked_List_Status Linked_List_AddNode(Linked_List_Node** My_Head,element_type data)
 {
-    Linked_List_Node NewNode = (Linked_List_Node)malloc(sizeof(Linked_List_Node));
+    Linked_List_Node* NewNode = (Linked_List_Node*)malloc(sizeof(Linked_List_Node));
+
     if(NewNode==NULL)
     {
         return Linked_FULL;
     }
 
+    NewNode->PNextLinkedList=NULL;
     // You can here change it if you change elements in Linked_List.
     NewNode->Person.id=data;
 
-    Linked_List_Node PLastNode=My_Head;
-    if(PLastNode->PNextLinkedList==NULL)
+
+    Linked_List_Node* PLastNode=(*(My_Head));
+
+    if((*(My_Head))==NULL)
     {
-        My_Head->PNextLinkedList=NewNode;
+        (*(My_Head))=NewNode;
     }
+
     else
     {
-        PLastNode=My_Head->PNextLinkedList;
+        PLastNode=(*(My_Head));
+
         while(PLastNode->PNextLinkedList!=NULL)
         {
             PLastNode = PLastNode->PNextLinkedList;
         }
         PLastNode->PNextLinkedList=NewNode;
     }
-    NewNode->PNextLinkedList=NULL;
+
     return Linked_OK;
+    /*
+    */
 }
 
-Linked_List_Status Linked_List_RemoveNode(Linked_List_Node My_Head,uint32_t index)
+Linked_List_Status Linked_List_RemoveNode(Linked_List_Node** My_Head,uint32_t index)
 {
     // For Validation
     if(index<0)
@@ -44,14 +52,14 @@ Linked_List_Status Linked_List_RemoveNode(Linked_List_Node My_Head,uint32_t inde
         return Linked_NOK;
     }
 
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
     uint32_t count=0;
-    Linked_List_Node PFindIndex=My_Head->PNextLinkedList;
-    Linked_List_Node PPrevIndex=My_Head->PNextLinkedList;
+    Linked_List_Node* PFindIndex=(*(My_Head));
+    Linked_List_Node* PPrevIndex=(*(My_Head));
 
     while(count!=index)
     {
@@ -73,7 +81,7 @@ Linked_List_Status Linked_List_RemoveNode(Linked_List_Node My_Head,uint32_t inde
 
     if(index==0)
     {
-        My_Head->PNextLinkedList=My_Head->PNextLinkedList->PNextLinkedList;
+        (*(My_Head))=(*(My_Head))->PNextLinkedList;
     }
     else
     {
@@ -84,19 +92,19 @@ Linked_List_Status Linked_List_RemoveNode(Linked_List_Node My_Head,uint32_t inde
     return Linked_OK;
 }
 
-Linked_List_Status Linked_List_FindNode(Linked_List_Node My_Head,element_type data,uint32_t* index)
+Linked_List_Status Linked_List_FindNode(Linked_List_Node** My_Head,element_type data,uint32_t* index)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_NotFound;
     }
 
     uint32_t count=0;
 
-    Linked_List_Node PFindIndex=My_Head->PNextLinkedList;
+    Linked_List_Node* PFindIndex=(*(My_Head));
 
-    while(PFindIndex!=NULL)
+    while(PFindIndex->PNextLinkedList!=NULL)
     {
         if(data==PFindIndex->Person.id)
         {
@@ -106,21 +114,23 @@ Linked_List_Status Linked_List_FindNode(Linked_List_Node My_Head,element_type da
         count++;
         PFindIndex=PFindIndex->PNextLinkedList;
     }
+
+    *index=-1;
     return Linked_NotFound;
 }
 
 
-Linked_List_Status Linked_List_Length(Linked_List_Node My_Head,uint32_t *length)
+Linked_List_Status Linked_List_Length(Linked_List_Node** My_Head,uint32_t *length)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
     uint32_t count=0;
 
-    Linked_List_Node PFindLength=My_Head->PNextLinkedList;
+    Linked_List_Node* PFindLength=(*(My_Head));
 
     while(PFindLength->PNextLinkedList!=NULL)
     {
@@ -134,28 +144,28 @@ Linked_List_Status Linked_List_Length(Linked_List_Node My_Head,uint32_t *length)
 }
 
 
-Linked_List_Status Linked_List_Front(Linked_List_Node My_Head,element_type *data)
+Linked_List_Status Linked_List_Front(Linked_List_Node** My_Head,element_type *data)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
-    *data=My_Head->PNextLinkedList->Person.id;
+    *data=(*(My_Head))->Person.id;
 
     return Linked_OK;
 }
 
-Linked_List_Status Linked_List_Back(Linked_List_Node My_Head,element_type *data)
+Linked_List_Status Linked_List_Back(Linked_List_Node** My_Head,element_type *data)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
-    Linked_List_Node PBack=My_Head->PNextLinkedList;
+    Linked_List_Node* PBack=(*(My_Head));
 
     while(PBack->PNextLinkedList!=NULL)
     {
@@ -169,7 +179,7 @@ Linked_List_Status Linked_List_Back(Linked_List_Node My_Head,element_type *data)
 
 Linked_List_Status Linked_List_IsFull()
 {
-    Linked_List_Node NewNode = (Linked_List_Node)malloc(sizeof(Linked_List_Node));
+    Linked_List_Node* NewNode = (Linked_List_Node*)malloc(sizeof(Linked_List_Node));
     if(NewNode==NULL)
     {
         return Linked_FULL;
@@ -181,9 +191,9 @@ Linked_List_Status Linked_List_IsFull()
 }
 
 
-Linked_List_Status Linked_List_IsEmpty(Linked_List_Node My_Head)
+Linked_List_Status Linked_List_IsEmpty(Linked_List_Node** My_Head)
 {
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
@@ -192,17 +202,17 @@ Linked_List_Status Linked_List_IsEmpty(Linked_List_Node My_Head)
 }
 
 
-Linked_List_Status Linked_List_NthNodeFromFront(Linked_List_Node My_Head,element_type *data,uint32_t index)
+Linked_List_Status Linked_List_NthNodeFromFront(Linked_List_Node** My_Head,element_type *data,uint32_t index)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
     uint32_t count=0;
 
-    Linked_List_Node PNode=My_Head->PNextLinkedList;
+    Linked_List_Node* PNode=(*(My_Head));
 
     while(count!=index)
     {
@@ -217,18 +227,18 @@ Linked_List_Status Linked_List_NthNodeFromFront(Linked_List_Node My_Head,element
     return Linked_Found;
 }
 
-Linked_List_Status Linked_List_NthNodeFromBack(Linked_List_Node My_Head,element_type *data,uint32_t index)
+Linked_List_Status Linked_List_NthNodeFromBack(Linked_List_Node** My_Head,element_type *data,uint32_t index)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
 
     uint32_t count=0;
 
-    Linked_List_Node PFront=My_Head->PNextLinkedList;
-    Linked_List_Node PBack=My_Head->PNextLinkedList;
+    Linked_List_Node* PFront=(*(My_Head));
+    Linked_List_Node* PBack=(*(My_Head));
 
     while(count!=index)
     {
@@ -252,29 +262,29 @@ Linked_List_Status Linked_List_NthNodeFromBack(Linked_List_Node My_Head,element_
 }
 
 
-Linked_List_Status Linked_List_Reverse(Linked_List_Node My_Head)
+Linked_List_Status Linked_List_Reverse(Linked_List_Node** My_Head)
 {
     // For Validation
-    if(My_Head->PNextLinkedList==NULL)
+    if((*(My_Head))==NULL)
     {
         return Linked_EMPTY;
     }
-    if(My_Head->PNextLinkedList->PNextLinkedList==NULL)
+    if((*(My_Head))->PNextLinkedList==NULL)
     {
         return Linked_OK;
     }
 
-    Linked_List_Node Buffer1=My_Head->PNextLinkedList->PNextLinkedList;
-    Linked_List_Node Buffer2=My_Head->PNextLinkedList;
+    Linked_List_Node* Buffer1=(*(My_Head))->PNextLinkedList;
+    Linked_List_Node* Buffer2=(*(My_Head));
     Buffer2->PNextLinkedList=NULL;
 
     while(Buffer1!=NULL)
     {
-        My_Head->PNextLinkedList=Buffer1;
+        (*(My_Head))=Buffer1;
         Buffer1=Buffer1->PNextLinkedList;
 
-        My_Head->PNextLinkedList->PNextLinkedList=Buffer2;
-        Buffer2=My_Head->PNextLinkedList;
+        (*(My_Head))->PNextLinkedList=Buffer2;
+        Buffer2=(*(My_Head));
     }
 
     return Linked_OK;
