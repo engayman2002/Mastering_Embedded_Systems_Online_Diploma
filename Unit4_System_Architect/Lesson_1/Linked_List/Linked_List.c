@@ -97,6 +97,7 @@ Linked_List_Status Linked_List_FindNode(Linked_List_Node** My_Head,element_type 
     // For Validation
     if((*(My_Head))==NULL)
     {
+        *index=-1;
         return Linked_NotFound;
     }
 
@@ -104,7 +105,7 @@ Linked_List_Status Linked_List_FindNode(Linked_List_Node** My_Head,element_type 
 
     Linked_List_Node* PFindIndex=(*(My_Head));
 
-    while(PFindIndex->PNextLinkedList!=NULL)
+    while(PFindIndex!=NULL)
     {
         if(data==PFindIndex->Person.id)
         {
@@ -125,6 +126,7 @@ Linked_List_Status Linked_List_Length(Linked_List_Node** My_Head,uint32_t *lengt
     // For Validation
     if((*(My_Head))==NULL)
     {
+        *length=0;
         return Linked_EMPTY;
     }
 
