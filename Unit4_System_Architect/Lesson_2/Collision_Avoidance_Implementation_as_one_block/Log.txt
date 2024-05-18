@@ -1,0 +1,104 @@
+
+UltraSonic_init
+
+DC_Motor_init
+
+Waiting State: distance = 33, Speed = 65
+
+Driving State: distance = 34, Speed = 65
+
+Driving State: distance = 34, Speed = 65
+
+Driving State: distance = 26, Speed = 0
+
+Waiting State: distance = 32, Speed = 65
+
+Driving State: distance = 30, Speed = 0
+
+Waiting State: distance = 30, Speed = 0
+
+Waiting State: distance = 35, Speed = 65
+
+Driving State: distance = 26, Speed = 0
+
+Waiting State: distance = 25, Speed = 0
+
+Waiting State: distance = 32, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 30, Speed = 0
+
+Waiting State: distance = 33, Speed = 65
+
+Driving State: distance = 31, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 28, Speed = 0
+
+Waiting State: distance = 32, Speed = 65
+
+Driving State: distance = 34, Speed = 65
+
+Driving State: distance = 27, Speed = 0
+
+Waiting State: distance = 32, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 33, Speed = 65
+
+Driving State: distance = 35, Speed = 65
+
+Driving State: distance = 31, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 33, Speed = 65
+
+Driving State: distance = 30, Speed = 0
+
+Waiting State: distance = 31, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 27, Speed = 0
+
+Waiting State: distance = 26, Speed = 0
+
+Waiting State: distance = 34, Speed = 65
+
+Driving State: distance = 35, Speed = 65
+
+Driving State: distance = 35, Speed = 65
+
+Driving State: distance = 27, Speed = 0
+
+Waiting State: distance = 29, Speed = 0
+
+Waiting State: distance = 34, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 30, Speed = 0
+
+Waiting State: distance = 29, Speed = 0
+
+Waiting State: distance = 32, Speed = 65
+
+Driving State: distance = 30, Speed = 0
+
+Waiting State: distance = 31, Speed = 65
+
+Driving State: distance = 32, Speed = 65
+
+Driving State: distance = 25, Speed = 0
+
+Waiting State: distance = 30, Speed = 0
+
+Waiting State: distance = 25, Speed = 0
+
+Waiting State: distance = 30, Speed = 0
+
+Waiting State: distance = 29, Speed = 0

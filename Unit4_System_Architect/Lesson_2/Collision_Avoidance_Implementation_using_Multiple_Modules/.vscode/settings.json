@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "state.h": "c",
+        "stdlib.h": "c",
+        "collision_avoidance.h": "c",
+        "dc_motor.h": "c"
+    }
+}

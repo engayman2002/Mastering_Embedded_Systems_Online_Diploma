@@ -1,0 +1,104 @@
+
+US_init
+
+DC_Motor_init (idle State)
+
+------------------------------------------------
+
+US_Busy state : distance = 33
+
+DC_Motor is Busy , Speed = 65
+
+Waiting_State: distance = 33 , I switched to the driving state with speed = 65
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 34
+
+DC_Motor is Busy , Speed = 65
+
+Driving_State: distance = 34 , I am still in the driving state with speed = 65
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 34
+
+DC_Motor is Busy , Speed = 65
+
+Driving_State: distance = 34 , I am still in the driving state with speed = 65
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 26
+
+DC_Motor is Busy , Speed = 0
+
+Driving_State: distance = 26 , I switched to the waiting state with speed = 0
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 32
+
+DC_Motor is Busy , Speed = 65
+
+Waiting_State: distance = 32 , I switched to the driving state with speed = 65
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 30
+
+DC_Motor is Busy , Speed = 0
+
+Driving_State: distance = 30 , I switched to the waiting state with speed = 0
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 30
+
+DC_Motor is Busy , Speed = 0
+
+Waiting_State: distance = 30 , I am still in the waiting state with speed = 0
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 35
+
+DC_Motor is Busy , Speed = 65
+
+Waiting_State: distance = 35 , I switched to the driving state with speed = 65
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 26
+
+DC_Motor is Busy , Speed = 0
+
+Driving_State: distance = 26 , I switched to the waiting state with speed = 0
+
+------------------------------------------------
+
+------------------------------------------------
+
+US_Busy state : distance = 25
+
+DC_Motor is Busy , Speed = 0
+
+Waiting_State: distance = 25 , I am still in the waiting state with speed = 0
+
+------------------------------------------------
