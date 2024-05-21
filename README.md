@@ -10,6 +10,6 @@
 <h4 align="left">Unit 2 --> <b>C_Programming</b> --> Done</h4>
 <h4 align="left">Unit 3 --> <b>Embedded_C</b> --> Done </h4>
 <h4 align="left">Unit 4 --> <b>System_Architect</b> --> Done </h4>
-<h4 align="left">Unit 5 --> <b>Final Exam & Project</b> --> Soon </h4>
+<h4 align="left">Unit 5 --> <b>Final Exam & Project</b> --> In_Progress </h4>
 
 
