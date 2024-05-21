@@ -1,0 +1,29 @@
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . Alarm_Driver/Alarm_Driver.c -o Alarm_Driver/Alarm_Driver.o
+arm-none-eabi-nm.exe Alarm_Driver/Alarm_Driver.o >> Alarm_Driver/Alarm_Driver.o-Symbols.txt
+arm-none-eabi-objdump.exe -h Alarm_Driver/Alarm_Driver.o >> Alarm_Driver/Alarm_Driver.o-Header.txt
+arm-none-eabi-objdump.exe -d Alarm_Driver/Alarm_Driver.o >> Alarm_Driver/Alarm_Driver.o-Disassemble.txt
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . Alarm_Monitor/Alarm_Monitor.c -o Alarm_Monitor/Alarm_Monitor.o
+arm-none-eabi-nm.exe Alarm_Monitor/Alarm_Monitor.o >> Alarm_Monitor/Alarm_Monitor.o-Symbols.txt
+arm-none-eabi-objdump.exe -h Alarm_Monitor/Alarm_Monitor.o >> Alarm_Monitor/Alarm_Monitor.o-Header.txt
+arm-none-eabi-objdump.exe -d Alarm_Monitor/Alarm_Monitor.o >> Alarm_Monitor/Alarm_Monitor.o-Disassemble.txt
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . driver/driver.c -o driver/driver.o
+arm-none-eabi-nm.exe driver/driver.o >> driver/driver.o-Symbols.txt
+arm-none-eabi-objdump.exe -h driver/driver.o >> driver/driver.o-Header.txt
+arm-none-eabi-objdump.exe -d driver/driver.o >> driver/driver.o-Disassemble.txt
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . Pressure_Sensor_Driver/Pressure_Sensor_Driver.c -o Pressure_Sensor_Driver/Pressure_Sensor_Driver.o
+arm-none-eabi-nm.exe Pressure_Sensor_Driver/Pressure_Sensor_Driver.o >> Pressure_Sensor_Driver/Pressure_Sensor_Driver.o-Symbols.txt
+arm-none-eabi-objdump.exe -h Pressure_Sensor_Driver/Pressure_Sensor_Driver.o >> Pressure_Sensor_Driver/Pressure_Sensor_Driver.o-Header.txt
+arm-none-eabi-objdump.exe -d Pressure_Sensor_Driver/Pressure_Sensor_Driver.o >> Pressure_Sensor_Driver/Pressure_Sensor_Driver.o-Disassemble.txt
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . main.c -o main.o
+arm-none-eabi-nm.exe main.o >> main.o-Symbols.txt
+arm-none-eabi-objdump.exe -h main.o >> main.o-Header.txt
+arm-none-eabi-objdump.exe -d main.o >> main.o-Disassemble.txt
+arm-none-eabi-gcc.exe -c -mcpu=cortex-m3 -gdwarf-2 -mthumb -I . startup.c -o startup.o
+arm-none-eabi-nm.exe startup.o >> startup.o-Symbols.txt
+arm-none-eabi-objdump.exe -h startup.o >> startup.o-Header.txt
+arm-none-eabi-objdump.exe -d startup.o >> startup.o-Disassemble.txt
+arm-none-eabi-ld.exe -T linker_script.ld Alarm_Driver/Alarm_Driver.o Alarm_Monitor/Alarm_Monitor.o driver/driver.o Pressure_Sensor_Driver/Pressure_Sensor_Driver.o  main.o startup.o  -o High_Pressure_Detection_LearnInDepth_Ayman.elf -Map=Map_file.map
+arm-none-eabi-objdump.exe -h High_Pressure_Detection_LearnInDepth_Ayman.elf >> Header_info_ELF_High_Pressure_Detection_LearnInDepth_Ayman.txt
+arm-none-eabi-objdump.exe -d High_Pressure_Detection_LearnInDepth_Ayman.elf >> Disassemble_info_ELF_High_Pressure_Detection_LearnInDepth_Ayman.txt
+arm-none-eabi-objcopy.exe -O binary High_Pressure_Detection_LearnInDepth_Ayman.elf High_Pressure_Detection_LearnInDepth_Ayman.bin
+Done.

@@ -1,0 +1,29 @@
+
+main.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	b580      	push	{r7, lr}
+   2:	b084      	sub	sp, #16
+   4:	af00      	add	r7, sp, #0
+   6:	f7ff fffe 	bl	0 <GPIO_INITIALIZATION>
+   a:	f240 0300 	movw	r3, #0
+   e:	f2c0 0300 	movt	r3, #0
+  12:	f107 0204 	add.w	r2, r7, #4
+  16:	e893 0003 	ldmia.w	r3, {r0, r1}
+  1a:	e882 0003 	stmia.w	r2, {r0, r1}
+  1e:	687b      	ldr	r3, [r7, #4]
+  20:	60fb      	str	r3, [r7, #12]
+  22:	68fb      	ldr	r3, [r7, #12]
+  24:	2b13      	cmp	r3, #19
+  26:	d904      	bls.n	32 <main+0x32>
+  28:	f7ff fffe 	bl	0 <High_Pressure_Detected>
+  2c:	687b      	ldr	r3, [r7, #4]
+  2e:	60fb      	str	r3, [r7, #12]
+  30:	e7f7      	b.n	22 <main+0x22>
+  32:	f7ff fffe 	bl	0 <Alarm_Reset>
+  36:	68bb      	ldr	r3, [r7, #8]
+  38:	60fb      	str	r3, [r7, #12]
+  3a:	e7f2      	b.n	22 <main+0x22>

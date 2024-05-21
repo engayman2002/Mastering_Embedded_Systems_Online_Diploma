@@ -1,0 +1,78 @@
+
+startup.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <Reset_Handler>:
+   0:	b580      	push	{r7, lr}
+   2:	b086      	sub	sp, #24
+   4:	af00      	add	r7, sp, #0
+   6:	f240 0200 	movw	r2, #0
+   a:	f2c0 0200 	movt	r2, #0
+   e:	f240 0300 	movw	r3, #0
+  12:	f2c0 0300 	movt	r3, #0
+  16:	1ad3      	subs	r3, r2, r3
+  18:	60bb      	str	r3, [r7, #8]
+  1a:	f240 0300 	movw	r3, #0
+  1e:	f2c0 0300 	movt	r3, #0
+  22:	617b      	str	r3, [r7, #20]
+  24:	f240 0300 	movw	r3, #0
+  28:	f2c0 0300 	movt	r3, #0
+  2c:	613b      	str	r3, [r7, #16]
+  2e:	f04f 0300 	mov.w	r3, #0
+  32:	60fb      	str	r3, [r7, #12]
+  34:	e00f      	b.n	56 <Reset_Handler+0x56>
+  36:	697b      	ldr	r3, [r7, #20]
+  38:	781a      	ldrb	r2, [r3, #0]
+  3a:	693b      	ldr	r3, [r7, #16]
+  3c:	701a      	strb	r2, [r3, #0]
+  3e:	693b      	ldr	r3, [r7, #16]
+  40:	f103 0301 	add.w	r3, r3, #1
+  44:	613b      	str	r3, [r7, #16]
+  46:	697b      	ldr	r3, [r7, #20]
+  48:	f103 0301 	add.w	r3, r3, #1
+  4c:	617b      	str	r3, [r7, #20]
+  4e:	68fb      	ldr	r3, [r7, #12]
+  50:	f103 0301 	add.w	r3, r3, #1
+  54:	60fb      	str	r3, [r7, #12]
+  56:	68fa      	ldr	r2, [r7, #12]
+  58:	68bb      	ldr	r3, [r7, #8]
+  5a:	429a      	cmp	r2, r3
+  5c:	d3eb      	bcc.n	36 <Reset_Handler+0x36>
+  5e:	f240 0200 	movw	r2, #0
+  62:	f2c0 0200 	movt	r2, #0
+  66:	f240 0300 	movw	r3, #0
+  6a:	f2c0 0300 	movt	r3, #0
+  6e:	1ad3      	subs	r3, r2, r3
+  70:	607b      	str	r3, [r7, #4]
+  72:	f240 0300 	movw	r3, #0
+  76:	f2c0 0300 	movt	r3, #0
+  7a:	613b      	str	r3, [r7, #16]
+  7c:	f04f 0300 	mov.w	r3, #0
+  80:	60fb      	str	r3, [r7, #12]
+  82:	e00b      	b.n	9c <Reset_Handler+0x9c>
+  84:	693b      	ldr	r3, [r7, #16]
+  86:	f04f 0200 	mov.w	r2, #0
+  8a:	701a      	strb	r2, [r3, #0]
+  8c:	693b      	ldr	r3, [r7, #16]
+  8e:	f103 0301 	add.w	r3, r3, #1
+  92:	613b      	str	r3, [r7, #16]
+  94:	68fb      	ldr	r3, [r7, #12]
+  96:	f103 0301 	add.w	r3, r3, #1
+  9a:	60fb      	str	r3, [r7, #12]
+  9c:	68fa      	ldr	r2, [r7, #12]
+  9e:	687b      	ldr	r3, [r7, #4]
+  a0:	429a      	cmp	r2, r3
+  a2:	d3ef      	bcc.n	84 <Reset_Handler+0x84>
+  a4:	f7ff fffe 	bl	0 <main>
+  a8:	f107 0718 	add.w	r7, r7, #24
+  ac:	46bd      	mov	sp, r7
+  ae:	bd80      	pop	{r7, pc}
+
+000000b0 <Default_Handler>:
+  b0:	b580      	push	{r7, lr}
+  b2:	af00      	add	r7, sp, #0
+  b4:	f7ff fffe 	bl	0 <Reset_Handler>
+  b8:	bd80      	pop	{r7, pc}
+  ba:	bf00      	nop

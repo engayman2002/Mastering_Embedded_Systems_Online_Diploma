@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "alarm_monitor.h": "c",
+        "alarm_driver.h": "c",
+        "driver.h": "c",
+        "pressure_sensor_driver.h": "c",
+        "stdint.h": "c",
+        "stdio.h": "c"
+    }
+}

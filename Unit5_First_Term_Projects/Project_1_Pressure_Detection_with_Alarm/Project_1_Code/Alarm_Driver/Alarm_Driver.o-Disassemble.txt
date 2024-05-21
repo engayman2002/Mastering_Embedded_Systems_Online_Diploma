@@ -1,0 +1,21 @@
+
+Alarm_Driver/Alarm_Driver.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <Alarm_Set>:
+   0:	b580      	push	{r7, lr}
+   2:	af00      	add	r7, sp, #0
+   4:	f04f 0000 	mov.w	r0, #0
+   8:	f7ff fffe 	bl	0 <Set_Alarm_actuator>
+   c:	bd80      	pop	{r7, pc}
+   e:	bf00      	nop
+
+00000010 <Alarm_Reset>:
+  10:	b580      	push	{r7, lr}
+  12:	af00      	add	r7, sp, #0
+  14:	f04f 0001 	mov.w	r0, #1
+  18:	f7ff fffe 	bl	0 <Set_Alarm_actuator>
+  1c:	bd80      	pop	{r7, pc}
+  1e:	bf00      	nop

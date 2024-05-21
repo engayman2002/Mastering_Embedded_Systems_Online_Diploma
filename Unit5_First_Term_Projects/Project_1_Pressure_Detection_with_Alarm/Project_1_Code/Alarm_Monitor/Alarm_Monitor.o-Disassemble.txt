@@ -1,0 +1,33 @@
+
+Alarm_Monitor/Alarm_Monitor.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <Alarm_ON>:
+   0:	b580      	push	{r7, lr}
+   2:	af00      	add	r7, sp, #0
+   4:	f7ff fffe 	bl	0 <Alarm_Set>
+   8:	bd80      	pop	{r7, pc}
+   a:	bf00      	nop
+
+0000000c <Alarm_OFF>:
+   c:	b580      	push	{r7, lr}
+   e:	af00      	add	r7, sp, #0
+  10:	f7ff fffe 	bl	0 <Alarm_Reset>
+  14:	bd80      	pop	{r7, pc}
+  16:	bf00      	nop
+
+00000018 <High_Pressure_Detected>:
+  18:	b580      	push	{r7, lr}
+  1a:	af00      	add	r7, sp, #0
+  1c:	f7ff fff0 	bl	0 <Alarm_ON>
+  20:	f244 2040 	movw	r0, #16960	; 0x4240
+  24:	f2c0 000f 	movt	r0, #15
+  28:	f7ff fffe 	bl	0 <Delay>
+  2c:	f7ff ffee 	bl	c <Alarm_OFF>
+  30:	f244 2040 	movw	r0, #16960	; 0x4240
+  34:	f2c0 000f 	movt	r0, #15
+  38:	f7ff fffe 	bl	0 <Delay>
+  3c:	bd80      	pop	{r7, pc}
+  3e:	bf00      	nop
