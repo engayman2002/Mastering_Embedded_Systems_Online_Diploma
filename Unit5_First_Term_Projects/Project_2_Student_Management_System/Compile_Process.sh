@@ -1,0 +1,1 @@
+gcc main.c Implementation/Implementation.c -o Student_Management_System.exe
